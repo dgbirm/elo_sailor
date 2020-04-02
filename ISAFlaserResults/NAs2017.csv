@@ -1,0 +1,55 @@
+,Place,Division,SailNo,HelmName,Club,City,Country,YOB,1 - Jun 22,2 - Jun 22,3 - Jun 22,4 - Jun 23,5 - Jun 23,6 - Jun 23,7 - Jun 24,8 - Jun 24,9 - Jun 24,10 - Jun 25,11 - Jun 25,12 - Jun 25,Total,Net
+0,1,Laser,199796,Malcolm Lamphere,LGYC / CYC,Lake Forest,,1996.0,5.0,6.0,4.0,4.0,1.0,5.0,(18.0),10.0,(15.0),4.0,2.0,6.0,80.0,47.0
+1,2,Laser,180521,Marek Zaleski,Noroton YC,Norwalk,,1994.0,8.0,1.0,14.0,6.0,6.0,2.0,(20.0),2.0,5.0,6.0,(16.0),7.0,93.0,57.0
+2,3,Laser,209071,Henry Marshall,Jamestown Boat Yard,Auburndale,,1999.0,6.0,4.0,1.0,13.0,2.0,(55.0 BFD),3.0,(55.0 UFD),11.0,11.0,5.0,2.0,168.0,58.0
+3,4,Laser,208069,Fillah Karim,RVanYC,West Vancouver,,1997.0,1.0,9.0,(55.0 UFD),11.0,7.0,3.0,9.0,3.0,(12.0),2.0,11.0,5.0,128.0,61.0
+4,5,Laser,210459,Scott Rasmussen,Lauderdale YC,Cape Coral,,1997.0,9.0,3.0,13.0,(24.0),10.0,8.0,2.0,6.0,1.0,(19.0),3.0,8.0,106.0,63.0
+5,6,Laser,199544,Paul E Didham,Mission Bay YC,San Diego,,1997.0,4.0,8.0,(17.0),3.0,12.0,7.0,8.0,(36.0),9.0,5.0,7.0,3.0,119.0,66.0
+6,7,Laser,200213,William Marshall,Stanford Sailing,Auburndale,,1997.0,2.0,2.0,5.0,8.0,4.0,10.0,11.0,(55.0 UFD),(20.0),3.0,6.0,16.0,142.0,67.0
+7,8,Laser,210539,Ford McCaun,Texas Corinthian YC,Houston,,1999.0,3.0,(55.0 DSQ),11.0,2.0,3.0,9.0,(22.0),1.0,13.0,9.0,8.0,11.0,147.0,70.0
+8,9,Laser,192015,Nic Baird,St. Petersburg YC / Yale Corinthian YC,St. Petersburg,,1997.0,14.0,7.0,7.0,9.0,8.0,(21.0),5.0,(17.0),3.0,14.0,4.0,4.0,113.0,75.0
+9,10,Laser,210109,Max Gallant,Canadian Sailing Team/RVicYC,Victoria,,1996.0,18.0,5.0,18.0,12.0,5.0,1.0,(29.0),19.0,2.0,1.0,9.0,(55.0 RET),174.0,90.0
+10,11,Laser,209376,Luke Ruitenberg,RNSYS,Head of St Margarets Bay,,1997.0,7.0,12.0,2.0,14.0,11.0,6.0,14.0,18.0,(32.0),7.0,1.0,(21.0),145.0,92.0
+11,12,Laser,199338,Marshall McCann,Texas Corinthian YC,Houston,,1999.0,12.0,10.0,9.0,5.0,9.0,4.0,(23.0),(29.0),21.0,8.0,12.0,20.0,162.0,110.0
+12,13,Laser,206719,Noah Collinson,Ontario Sailing/RCYC,Toronto,,2000.0,(17.0),15.0,6.0,17.0,14.0,12.0,12.0,9.0,(18.0),15.0,10.0,1.0,146.0,111.0
+13,14,Laser,209616,Forrest Wachholz,Barrie YC / OST,Barrie,,1997.0,15.0,11.0,8.0,(20.0),15.0,17.0,6.0,5.0,19.0,(55.0 RET),15.0,9.0,195.0,120.0
+14,15,Laser,209289,Peter Hurley,Mantoloking,New York,,1970.0,11.0,17.0,(55.0 UFD),1.0,16.0,18.0,7.0,(41.0),24.0,10.0,20.0,10.0,230.0,134.0
+15,16,Laser,181847,Julian Soto,DRYC,Venice,,1990.0,(28.0),(23.0),19.0,10.0,20.0,23.0,1.0,7.0,4.0,23.0,17.0,13.0,188.0,137.0
+16,17,Laser,210644,James Juhasz,BHYC / OST,Oakville,,1999.0,10.0,25.0,3.0,23.0,(55.0 BFD),14.0,4.0,23.0,(55.0 RET),12.0,25.0,17.0,266.0,156.0
+17,18,Laser,207227,Norman Struthers,Ontario Sailing/RCYC,Toronto,,2000.0,21.0,22.0,10.0,18.0,19.0,13.0,10.0,(40.0),17.0,16.0,(24.0),23.0,233.0,169.0
+18,19,Laser,209075,Gord Welsh,Stony Lake YC,Peterborough,,1983.0,16.0,16.0,(55.0 DNC),19.0,13.0,19.0,27.0,(38.0),7.0,17.0,19.0,30.0,276.0,183.0
+19,20,Laser,210695,John Owen,RVicYC,Victoria,,1999.0,25.0,19.0,20.0,(30.0),18.0,22.0,(33.0),25.0,16.0,13.0,13.0,14.0,248.0,185.0
+20,21,Laser,188655,Juan Ignacio Perez Soltero,San Cristobal SC,Guadalajara,,1996.0,27.0,13.0,(55.0 UFD),26.0,(55.0 BFD),16.0,19.0,8.0,10.0,22.0,28.0,19.0,298.0,188.0
+21,22,Laser,162442,Dennis Infante Pupo,Habana YC,Havana,,1993.0,24.0,18.0,26.0,21.0,(55.0 BFD),15.0,16.0,4.0,(31.0),21.0,26.0,31.0,288.0,202.0
+22,23,Laser,204077,Brendan Aulthouse,Kingston YC,Belleville,,,23.0,14.0,36.0,7.0,(55.0 BFD),11.0,39.0,11.0,14.0,(55.0 RET),23.0,24.0,312.0,202.0
+23,24,Laser,177175,Perham Moynier Black,SJISF/CN El Trocadero,Friday Harbor,,1999.0,31.0,21.0,28.0,16.0,(55.0 BFD),29.0,15.0,12.0,22.0,(37.0),21.0,12.0,299.0,207.0
+24,25,Laser,199942,Blake Bentzen,CYC Seattle,Poulsbo,,1998.0,19.0,24.0,15.0,(46.0),24.0,20.0,17.0,31.0,(33.0),20.0,29.0,15.0,293.0,214.0
+25,26,Laser,200378,Andriy Kanyuka,Jericho Sailing Centre,Vancouver,,1965.0,22.0,26.0,12.0,15.0,25.0,26.0,(42.0),22.0,8.0,33.0,(34.0),27.0,292.0,216.0
+26,27,Laser,208070,Jorge L Yanez Del Castillo,Jericho Sailing Centre,Vancouver,,1961.0,20.0,28.0,(43.0),33.0,17.0,30.0,13.0,(43.0),6.0,34.0,18.0,40.0,325.0,239.0
+27,28,Laser,155584,Andres Boccalandro Ferreira,EV Americo Vespucio,Lecheria,,1998.0,13.0,27.0,35.0,28.0,22.0,25.0,21.0,20.0,26.0,(36.0),30.0,(43.0),326.0,247.0
+28,29,Laser,203653,Tony Martin,Jericho Sailing Centre,Vancouver,,1957.0,(34.0),20.0,27.0,27.0,28.0,24.0,31.0,16.0,30.0,27.0,33.0,(41.0),338.0,263.0
+29,30,Laser,190866,Lauri Kalkkinen,SN de Geneve,Geneva,,1991.0,26.0,36.0,16.0,35.0,(43.0),28.0,34.0,(44.0),29.0,18.0,27.0,18.0,354.0,267.0
+30,31,Laser,160107,Scott Gittens,Barbados YC,Bridgetown,,1998.0,33.0,(38.0),37.0,25.0,26.0,(42.0),28.0,15.0,23.0,32.0,32.0,22.0,353.0,273.0
+31,32,Laser,199914,Greg Jackson,Port Madison YC,Bainbridge Isl,,1954.0,29.0,(45.0),22.0,22.0,27.0,27.0,(55.0 BFD),14.0,36.0,29.0,38.0,34.0,378.0,278.0
+32,33,Laser,209674,Adam Sorensen,RVicYC,Victoria,,1995.0,(38.0),30.0,31.0,36.0,21.0,35.0,24.0,(55.0 UFD),27.0,31.0,22.0,26.0,376.0,283.0
+33,34,Laser,210331,Hendrik Reidel,Tahoe YC / StFYC,Reno,,1997.0,32.0,31.0,29.0,(43.0),23.0,36.0,25.0,28.0,(55.0 RET),24.0,31.0,25.0,382.0,284.0
+34,35,Laser,197594,Sascha Smutny,Jericho Sailing Centre,North Vancouver,,,30.0,29.0,24.0,(39.0),(55.0 BFD),33.0,35.0,34.0,34.0,26.0,14.0,28.0,381.0,287.0
+35,36,Laser,190480,Lukas Kraak,Cabrillo Beach YC,Palos Verdes Estates,,2000.0,35.0,32.0,25.0,34.0,36.0,(44.0),(55.0 BFD),21.0,38.0,30.0,43.0,35.0,428.0,329.0
+36,37,Laser,171158,Jay Leon,Seattle YC,Seattle,,1963.0,36.0,(41.0),33.0,31.0,(55.0 BFD),37.0,41.0,37.0,25.0,25.0,35.0,29.0,425.0,329.0
+37,38,Laser,209290,Connor Weicht,Calgary YC and RVIC,Calgary,,2000.0,37.0,33.0,30.0,38.0,32.0,39.0,26.0,32.0,28.0,40.0,(46.0),(55.0 RET),436.0,335.0
+38,39,Laser,175923,Austin Stewart,Hollyburn SC,North Vancouver,,1996.0,(55.0 DNC),39.0,21.0,29.0,30.0,41.0,(55.0 BFD),39.0,42.0,28.0,41.0,33.0,453.0,343.0
+39,40,Laser,206057,Tim Murphy,KYC/JSCA,Vancouver,,1961.0,39.0,37.0,32.0,32.0,33.0,32.0,36.0,30.0,35.0,(42.0),42.0,(44.0),434.0,348.0
+40,41,Laser,185926,Richard Quinlan,St. Mary's SC,Lethbridge,,1954.0,43.0,43.0,23.0,(45.0),35.0,34.0,38.0,27.0,(45.0),38.0,36.0,38.0,445.0,355.0
+41,42,Laser,189805,Liam Quinlan,St. Mary's SC,Lethbridge,,1991.0,40.0,42.0,34.0,37.0,29.0,31.0,37.0,33.0,41.0,(43.0),(45.0),32.0,444.0,356.0
+42,43,Laser,195943,David Anthes,SSC,Bend,,1970.0,(48.0),40.0,(55.0 DNC),42.0,38.0,40.0,30.0,24.0,39.0,35.0,40.0,42.0,473.0,370.0
+43,44,Laser,208826,Yevgen Dombrovskiy,Glenmore SC,Calgary,,1971.0,41.0,35.0,39.0,41.0,34.0,38.0,(45.0),35.0,37.0,(44.0),37.0,36.0,462.0,373.0
+44,45,Laser,199919,Jacek Suski,Jericho Sailing Centre,Vancouver,,1946.0,42.0,34.0,40.0,(48.0),37.0,(55.0 RET),32.0,13.0,40.0,41.0,48.0,47.0,477.0,374.0
+45,46,Laser,161932,Kayden Polachek,Gimli YC,Winnipeg,,2000.0,46.0,44.0,(55.0 DNC),40.0,31.0,(48.0),40.0,47.0,43.0,39.0,39.0,37.0,509.0,406.0
+46,47,Laser,197564,William Mulloy,Calgary YC,Calgary,,1961.0,45.0,47.0,(55.0 DNC),(49.0),40.0,43.0,44.0,26.0,46.0,46.0,49.0,48.0,538.0,434.0
+47,48,Laser,189137,Jim Campbell,Calgary YC,Calgary,,1957.0,47.0,48.0,42.0,44.0,39.0,45.0,(55.0 BFD),45.0,44.0,(49.0),44.0,39.0,541.0,437.0
+48,49,Laser,200123,Russell Cole,OCBC,Oklahoma City,,1958.0,44.0,46.0,41.0,(47.0),42.0,46.0,43.0,42.0,47.0,45.0,(50.0),46.0,539.0,442.0
+49,50,Laser,188924,William Dawson,Winnipeg SC,Winnipeg,,1950.0,49.0,49.0,38.0,50.0,41.0,47.0,46.0,46.0,(55.0 DNC),48.0,51.0,(55.0 DNC),575.0,465.0
+50,51,Laser,189807,Mark Kortbeek,Wabamum SC,Edmonton,,1964.0,(55.0 DNC),(55.0 DNC),55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNF,55.0 DNC,55.0 DNC,47.0,47.0,45.0,634.0,524.0
+51,52,Laser,174311,Pedro Fernandez,CN de San Juan,San Juan,,1997.0,(55.0 DNC),(55.0 DNC),55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,660.0,550.0
+52,52,Laser,206130,Benjie McMaster,RVanYC,Vancouver,,1999.0,(55.0 DNC),(55.0 DNC),55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,660.0,550.0
+53,52,Laser,200589,Caleb Yoslov,San Francisco YC,Corte Madera,,2002.0,(55.0 DNC),(55.0 DNC),55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,55.0 DNC,660.0,550.0

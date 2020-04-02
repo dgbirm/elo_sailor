@@ -1,19 +1,30 @@
 """
-Created July 2019
-Back end system to update sailing rankings based on the results of a regatta
-now using the glicko2 rating system
-Written for python 2
-@author - Dan Birmingham
+Owner: Dan Birmingham
+Contributers:
+Start date: July 2019
+Last updated:Dec 12 2019
+Description:Back end system to update sailing rankings based on the results of a regatta
+now using the glicko2 rating system. Code has been updated for python 3
+
+Licensing: 
+
+dependencies
+system:     
+
+python:     glicko2: "INSERT GIT ADDRESS"
+            text_unidecode
+            csv
+           
 """
 
 from glicko2 import *
 import csv
+from text_unidecode import unidecode
+
 
 ################################################################################
 ## Problems/thoughts  ##########################################################
 ################################################################################
-
-#Double check all the rankings are updating at once as they should
 
 #TODO in update rankings prompts "Sailor not found in database, would you like
 # to add now with base rating"... in fact the whole thing should be a lot more
@@ -24,6 +35,42 @@ import csv
 
 ###### THERE should be a better way to adopt scale up scale down and rate
 
+#Probably should exclude DNC/DNF/UFD all together... should someone be heavily
+#penalized for withdrawing from a regatta?
+#if score== number of participants + 1, exclude
+
+#Implement constant time lookup for system... hashing? dictionaries (of more than
+#one element)?
+
+#Ability to sort by rankings by rating and alphabet?... Key?
+
+#Instead of names I think ultimately we need to use Id number... maybe US sailing
+#id... that maybe different names can map to
+
+
+
+################################################################################
+## helper Functions ############################################################
+################################################################################
+def _getRidOfExtraChars(string):
+    """Get rid of characters (like whitespace) that complicate string matching
+    in input string"""
+
+    #what are the characters we want to get rid of?
+    lstOfBadChars = [' ','_',"'"]
+
+    #do it using .replace() string function
+    for i in lstOfBadChars:
+        string = string.replace(i,'')
+    return string
+
+
+def _simplifyName(name):
+    """Given name as a string, return simplified version so that 
+    all characters are in [a-z](whitespace removed)"""
+    return _getRidOfExtraChars(unidecode(name).lower())
+
+
 ################################################################################
 ## Classes #####################################################################
 ################################################################################
@@ -32,8 +79,10 @@ class sailorRating(Rating):
     are rated"""
     def __init__(self, name, Class="College", mu=MU, phi=PHI, sigma=SIGMA):
         super(sailorRating, self).__init__(mu, phi, sigma)
-        self.name = name
+        self.name = name #potentially unidecode here
         self.Class = Class
+        #create simple name (for checking if sailor already in dB)
+        self.sn = _simplifyName(self.name)
         
     def __repr__(self):
         args = (self.name, self.Class, self.mu, self.phi, self.sigma)
@@ -53,30 +102,30 @@ class sailingGlicko2(Glicko2):
         self.rankedMembers = []
         self.baseRating = mu
 
-    def _getPlayerList(self):
+    def _getSailorList(self):
         """
-        Returns this implementation's player list.
-        @return - the list of all player objects in the implementation.
+        Returns this implementation's sailor list.
+        @return - the list of all sailor objects in the implementation.
         """
         return self.rankedMembers
 
-    def getPlayer(self, name):
+    def getSailor(self, name):
         """
-        Returns the player in the implementation with the given name.
-        @param name - name of the player to return.
-        @return - the player with the given name.
+        Returns the sailor in the implementation with the given name.
+        @param name - name of the sailor to return.
+        @return - the sailor with the given name.
         """
-        for player in self.rankedMembers:
-            if player.name == name:
-                return player
+        for sailor in self.rankedMembers:
+            if sailor.name == name:
+                return sailor
         return None
 
-    def _getPlayerAndIndex(self, name):
+    def _getSailorAndIndex(self, name):
         """
-        Returns the player in the implementation with the given name and 
-        the index of that player in rankedMebers(for use in sailingGlicko2updateRankings)
-        @param name - name of the player to return.
-        @return - (the player with the given name,index of that player in rankedMembers).
+        Returns the sailor in the implementation with the given name and 
+        the index of that sailor in rankedMebers(for use in sailingGlicko2updateRankings)
+        @param name - name of the sailor to return.
+        @return - (the sailor with the given name,index of that sailor in rankedMembers).
         """
         for i in range(0,len(self.rankedMembers)):
             if self.rankedMembers[i].name == name:
@@ -85,12 +134,12 @@ class sailingGlicko2(Glicko2):
 
     def contains(self, name):
         """
-        Returns true if this object contains a player with the given name.
+        Returns true if this object contains a sailor with the given name.
         Otherwise returns false.
         @param name - name to check for.
         """
         for player in self.rankedMembers:
-            if player.name == name:
+            if player.sn == _simplifyName(name):
                 return True
         return False
 
@@ -158,11 +207,11 @@ class sailingGlicko2(Glicko2):
         return self.create_rating(rating.name, rating.Class, mu, phi, rating.sigma)
 
 
-    def addPlayer(self, name, rating=None, phi=None, sigma=None):
+    def addSailor(self, name, rating=None, phi=None, sigma=None):
         """
-        Adds a new player to the implementation.
-        @param name - The name to identify a specific player.
-        @param rating - The player's rating.
+        Adds a new sailor to the implementation.
+        @param name - The name to identify a specific sailor.
+        @param rating - The sailor's rating.
         """
         if rating == None:
             rating = self.baseRating
@@ -170,20 +219,20 @@ class sailingGlicko2(Glicko2):
         #check this
         self.rankedMembers.append(self.create_rating(name, self.Class, mu=rating, phi=phi, sigma=sigma))
 
-    def removePlayer(self, name):
+    def removeSailor(self, name):
         """
-        Remove player from the implementation
-        @param name - The name to identify a specific player.
+        Remove sailor from the implementation
+        @param name - The name to identify a specific sailor.
         """
-        self._getPlayerList().remove(self.getPlayer(name))
+        self._getSailorList().remove(self.getSailor(name))
 
     def getRatingList(self):
         """
         @return - list of ratings
         """
         lst = []
-        for player in self._getPlayerList():
-            lst.append(player)
+        for sailor in self._getSailorList():
+            lst.append(sailor)
         return lst
 
     def printRatingList(self):
@@ -191,12 +240,13 @@ class sailingGlicko2(Glicko2):
         @return - list of ratings
         """
         lst = []
-        for player in self._getPlayerList():
-            print player
+        for sailor in self._getSailorList():
+            print (sailor)
     def sortRatings(self):
         """Sort the sailors in the dB based on highest ranking"""
-        pass
+        self.rankedMembers.sort(key=lambda x:x.mu, reverse=True)
 
+    #probably not useful
     def updateRankings(self, strResults):
         """Function that will appropriately update the rankings of all
         sailors who compete against each other in a race. Takes in as argument
@@ -213,7 +263,7 @@ class sailingGlicko2(Glicko2):
         results = []
         indexLst = []
         for name in strResults:
-            tup = self._getPlayerAndIndex(name)
+            tup = self._getSailorAndIndex(name)
             results.append(tup[0])
             indexLst.append(tup[1])
 
@@ -235,25 +285,29 @@ class sailingGlicko2(Glicko2):
         for i in range(0,numOfSailors):
             self.rankedMembers[indexLst[i]]= rankingAdjustments[i]
 
+        #Sort the results
+        self.sortRatings()
+
 
 ################################################################################
 ## testing workspace  ##########################################################
 ################################################################################
 sailorGlicko2TestDB = sailingGlicko2(tau=1.0) #create our glicko2 dB
 
-with open('rankings_mod.csv', 'rb') as csvfile: # open test data to get names of schools
+with open('rankings_mod.csv', 'r') as csvfile: # open test data to get names of schools
     dictReader = csv.DictReader(csvfile)
 
 
-    #Add the players to our DB
+    #Add the sailors to our DB
     for row in dictReader:
-        sailorGlicko2TestDB.addPlayer((row['school_coded']))
+        sailorGlicko2TestDB.addSailor((row['school_coded']))
 
-#sailorGlicko2TestDB.printRatingList()
-
+sailorGlicko2TestDB.printRatingList()
+print('\nResults\n')
+    
 #get list of list of regatta results not worrying about ties
 seasonResults = []
-with open('neisa_only_mod.csv', 'rb') as csvfile: 
+with open('neisa_only_mod.csv', 'r') as csvfile: 
     dictReader = csv.DictReader(csvfile)
 
     regattaResults = []
