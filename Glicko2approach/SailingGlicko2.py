@@ -292,48 +292,41 @@ class sailingGlicko2(Glicko2):
 ################################################################################
 ## testing workspace  ##########################################################
 ################################################################################
-sailorGlicko2TestDB = sailingGlicko2(tau=1.0) #create our glicko2 dB
+if __name__ == '__main__':
+    sailorGlicko2TestDB = sailingGlicko2(tau=1.0) #create our glicko2 dB
 
-with open('rankings_mod.csv', 'r') as csvfile: # open test data to get names of schools
-    dictReader = csv.DictReader(csvfile)
-
-
-    #Add the sailors to our DB
-    for row in dictReader:
-        sailorGlicko2TestDB.addSailor((row['school_coded']))
-
-sailorGlicko2TestDB.printRatingList()
-print('\nResults\n')
-    
-#get list of list of regatta results not worrying about ties
-seasonResults = []
-with open('neisa_only_mod.csv', 'r') as csvfile: 
-    dictReader = csv.DictReader(csvfile)
-
-    regattaResults = []
-    i = 1
-
-    for row in dictReader:
-        if 'NA' == row['regatta_id']:
-            pass
-        elif i == int(row['regatta_id']):
-            regattaResults.append((row['school_coded']))
-        else:
-            while i < int(row['regatta_id']):
-                i+=1
-            seasonResults.append(regattaResults)
-            regattaResults = []
-            regattaResults.append((row['school_coded']))      
-
-#Update the rankings after regatta
-for lst in seasonResults:
-    sailorGlicko2TestDB.updateRankings(lst)
-sailorGlicko2TestDB.printRatingList()
+    with open('rankings_mod.csv', 'r') as csvfile: # open test data to get names of schools
+        dictReader = csv.DictReader(csvfile)
 
 
-################################################################################
-## program main function #######################################################
-################################################################################
+        #Add the sailors to our DB
+        for row in dictReader:
+            sailorGlicko2TestDB.addSailor((row['school_coded']))
 
-# if __name__ == '__main__':
-#     main()
+    sailorGlicko2TestDB.printRatingList()
+    print('\nResults\n')
+        
+    #get list of list of regatta results not worrying about ties
+    seasonResults = []
+    with open('neisa_only_mod.csv', 'r') as csvfile: 
+        dictReader = csv.DictReader(csvfile)
+
+        regattaResults = []
+        i = 1
+
+        for row in dictReader:
+            if 'NA' == row['regatta_id']:
+                pass
+            elif i == int(row['regatta_id']):
+                regattaResults.append((row['school_coded']))
+            else:
+                while i < int(row['regatta_id']):
+                    i+=1
+                seasonResults.append(regattaResults)
+                regattaResults = []
+                regattaResults.append((row['school_coded']))      
+
+    #Update the rankings after regatta
+    for lst in seasonResults:
+        sailorGlicko2TestDB.updateRankings(lst)
+    sailorGlicko2TestDB.printRatingList()

@@ -1,2 +1,9 @@
+# Ignore compiled Python files
+*.pyc
+# Ignore cache files
+*.cache
+#Ignore log files
+*.log
+package-metadata.json
+.DS_Store
 zamzar.sh
-zamzar
