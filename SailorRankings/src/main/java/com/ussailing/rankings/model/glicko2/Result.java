@@ -6,8 +6,6 @@
  */
 package com.ussailing.rankings.model.glicko2;
 
-import com.ussailing.rankings.model.glicko2.Player;
-
 /**
  * Represents the result of a match between two players.
  * 

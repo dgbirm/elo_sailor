@@ -1,14 +1,12 @@
 /*
  * Copyright (C) 2013 Jeremy Gooch <http://www.linkedin.com/in/jeremygooch/>
  *
- * The licence covering the contents of this file is described in the file LICENCE.txt,
+ * The license covering the contents of this file is described in the file LICENSE.txt,
  * which should have been included as part of the distribution containing this file.
  */
 package com.ussailing.rankings.model.glicko2;
 
 import java.util.List;
-
-import com.ussailing.rankings.model.glicko2.Player;
 
 /**
  * This is the main calculation engine based on the contents of Glickman's paper.

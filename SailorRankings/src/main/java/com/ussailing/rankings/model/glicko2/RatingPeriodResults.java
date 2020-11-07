@@ -11,26 +11,24 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.ussailing.rankings.model.glicko2.Player;
-
 /**
  * This class holds the results accumulated over a rating period.
  * 
  * @author Jeremy Gooch
  */
 public class RatingPeriodResults {
-	private List<Result> results = new ArrayList<Result>();
-	private Set<Player> participants = new HashSet<Player>();
+	private List<Result> results = new ArrayList<>();
+	private Set<Player> participants = new HashSet<>();
 
 	
 	/**
-	 * Create an empty resultset.
+	 * Create an empty results List.
 	 */
 	public RatingPeriodResults() {}
 	
 
 	/**
-	 * Constructor that allows you to initialise the list of participants.
+	 * Constructor that allows you to initialize the list of participants.
 	 * 
 	 * @param participants (Set of Player objects)
 	 */
@@ -87,7 +85,7 @@ public class RatingPeriodResults {
 	/**
 	 * Get all the participants whose results are being tracked.
 	 * 
-	 * @return set of all participants covered by the resultset.
+	 * @return set of all participants covered by the results List.
 	 */
 	public Set<Player> getParticipants() {
 		// Run through the results and make sure all players have been pushed into the participants set.
@@ -112,7 +110,7 @@ public class RatingPeriodResults {
 	
 	
 	/**
-	 * Clear the resultset.
+	 * Clear the results Set.
 	 */
 	public void clear() {
 		results.clear();
