@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class RatingEngine{
 
-	private final static double DEFAULT_RATING =  1500.0;
+	private final static double DEFAULT_RATING =  1200.0;
 	private final static double DEFAULT_DEVIATION =  350;
 	private final static double DEFAULT_VOLATILITY =  0.06;
 	private final static double DEFAULT_TAU =  0.75;
@@ -25,7 +25,7 @@ public class RatingEngine{
 	private final static double CONVERGENCE_TOLERANCE =  0.000001;
 	
 	private double tau; // constrains volatility over time
-	private double defaultVolatility;
+	private double volatility;
 	
 	
 	/**
@@ -33,7 +33,7 @@ public class RatingEngine{
 	 */
 	public RatingEngine() {
 		tau = DEFAULT_TAU;
-		defaultVolatility = DEFAULT_VOLATILITY;
+		volatility = DEFAULT_VOLATILITY;
 	}
 
 	
@@ -46,7 +46,7 @@ public class RatingEngine{
 			double initVolatility,
 			double tau) {
 		
-		this.defaultVolatility = initVolatility;
+		this.volatility = initVolatility;
 		this.tau = tau;
 	}
 
@@ -304,8 +304,8 @@ public class RatingEngine{
 	}
 
 	
-	public double getDefaultVolatility() {
-		return defaultVolatility;
+	public double getVolatility() {
+		return volatility;
 	}
 
 	
