@@ -26,8 +26,6 @@ import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import com.ussailing.rankings.model.Model;
-
 /**
  * Holds an individual's Glicko-2 rating.
  *
@@ -41,7 +39,7 @@ import com.ussailing.rankings.model.Model;
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name = "player")
-public class Player implements Model, Serializable {
+public class Player implements Serializable {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 7857123826265978286L; //default generated
@@ -62,15 +60,15 @@ public class Player implements Model, Serializable {
 	
 	/** The rating. */
 	@Column(name = "rating" , updatable = true, nullable = false)
-	private Double rating;
+	private Double rating = RatingEngine.DEFAULT_RATING;
 	
 	/** The rating deviation. */
 	@Column(name = "ratingDeviation", updatable = true, nullable = false)
-	private Double ratingDeviation;
+	private Double ratingDeviation = RatingEngine.DEFAULT_DEVIATION;
 	
 	/** The volatility. */
 	@Column(name = "volatility", updatable = true, nullable = false)
-	private Double volatility;
+	private Double volatility = RatingEngine.DEFAULT_VOLATILITY;
 	
 	/** The number of results from which the rating has been calculated. */
 	@Column(name = "volatility", updatable = true, nullable = false)
@@ -92,12 +90,9 @@ public class Player implements Model, Serializable {
 	 * @param lastName     the last name.
 	 * @param ratingSystem An instance of the RatingEngine object
 	 */
-	public Player(String firstName, String lastName, RatingEngine ratingSystem) {
+	public Player(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.rating = ratingSystem.getDefaultRating();
-		this.ratingDeviation = ratingSystem.getDefaultRatingDeviation();
-		this.volatility = ratingSystem.getDefaultVolatility();
 	}
 
 	/**
@@ -116,6 +111,10 @@ public class Player implements Model, Serializable {
 		this.ratingDeviation = initRatingDeviation;
 		this.volatility = initVolatility;
 	}
+	/**
+	 * Instantiates a new player.
+	 */
+	public Player() {}
 
 	/**
 	 * Return the rating value of the player.

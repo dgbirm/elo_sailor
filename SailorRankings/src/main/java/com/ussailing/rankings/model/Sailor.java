@@ -1,24 +1,38 @@
 package com.ussailing.rankings.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 import com.ussailing.rankings.model.glicko2.Player;
-import com.ussailing.rankings.model.glicko2.RatingEngine;
  
 @Entity
 @Table(name = "Sailor")
-public class Sailor extends Player {
+public class Sailor extends Player implements ISailorModel{
 	
-	private static final long serialVersionUID = -9070223475888842325L;
+	private static final long serialVersionUID = -9070223475888842325L; //default generated
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name = "rankingClass", updatable = false, nullable = false)
+	private final RankingClass rankingClass;
 
-	public Sailor(String firstName, String lastName, RatingEngine ratingSystem) {
-		super(firstName, lastName, ratingSystem);
+	public Sailor(String firstName, String lastName, RankingClass rankingClass) {
+		super(firstName, lastName);
+		this.rankingClass = rankingClass;
+		
 	}
 	
 	public Sailor(String firstName, String lastName, Double initRating, Double initRatingDeviation,
-			Double initVolatility) {
+			Double initVolatility, RankingClass rankingClass) {
 		super(firstName, lastName, initRating, initRatingDeviation, initVolatility);
+		this.rankingClass = rankingClass;
+	}
+	
+	public Sailor() {
+		super();
+		this.rankingClass = null;
 	}
 
 }

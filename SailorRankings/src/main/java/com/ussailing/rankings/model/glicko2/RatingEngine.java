@@ -1,9 +1,16 @@
 /*
+ * Copyright (c) 2020 as part of SailorRankings, All rights reserved.
+ * @author Dan Birmingham. Please reach out to dgbirm@gmail.com
+ * Date generated: Nov 11, 2020
+ * @version jdk-11
+ * 
+ * /*
  * Copyright (C) 2013 Jeremy Gooch <http://www.linkedin.com/in/jeremygooch/>
  *
  * The license covering the contents of this file is described in the file LICENSE.txt,
  * which should have been included as part of the distribution containing this file.
  */
+
 package com.ussailing.rankings.model.glicko2;
 
 import java.util.List;
@@ -17,12 +24,12 @@ import java.util.List;
  */
 public class RatingEngine{
 
-	private final static double DEFAULT_RATING =  1200.0;
-	private final static double DEFAULT_DEVIATION =  350;
-	private final static double DEFAULT_VOLATILITY =  0.06;
-	private final static double DEFAULT_TAU =  0.75;
-	private final static double MULTIPLIER =  173.7178;
-	private final static double CONVERGENCE_TOLERANCE =  0.000001;
+	public final static double DEFAULT_RATING =  1500.0;
+	public final static double DEFAULT_DEVIATION =  350;
+	public final static double DEFAULT_VOLATILITY =  0.06;
+	public final static double DEFAULT_TAU =  0.75;
+	public final static double MULTIPLIER =  173.7178;
+	public final static double CONVERGENCE_TOLERANCE =  0.000001;
 	
 	private double tau; // constrains volatility over time
 	private double volatility;
