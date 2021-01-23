@@ -16,7 +16,7 @@ public class Sailor extends Player implements ISailorModel{
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "rankingClass", updatable = false, nullable = false)
-	private final RankingClass rankingClass;
+	private RankingClass rankingClass;
 
 	public Sailor(String firstName, String lastName, RankingClass rankingClass) {
 		super(firstName, lastName);
@@ -32,7 +32,8 @@ public class Sailor extends Player implements ISailorModel{
 	
 	public Sailor() {
 		super();
-		this.rankingClass = null;
 	}
+	
+	
 
 }

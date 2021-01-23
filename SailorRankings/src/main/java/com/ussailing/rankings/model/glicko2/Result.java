@@ -28,9 +28,8 @@ public class Result {
 	 * @param loser
 	 */
 	public Result(Player winner, Player loser) {
-		if ( ! validPlayers(winner, loser) ) {
+		if (! validPlayers(winner, loser)) 
 			throw new IllegalArgumentException();
-		}
 
 		this.winner = winner;
 		this.loser = loser;
@@ -45,9 +44,8 @@ public class Result {
 	 * @param isDraw (must be set to "true")
 	 */
 	public Result(Player player1, Player player2, boolean isDraw) {
-		if (! isDraw || ! validPlayers(player1, player2) ) {
+		if (! isDraw || ! validPlayers(player1, player2)) 
 			throw new IllegalArgumentException();
-		}
 		
 		this.winner = player1;
 		this.loser = player2;
@@ -63,11 +61,7 @@ public class Result {
 	 * @return
 	 */
 	private boolean validPlayers(Player player1, Player player2) {
-		if (player1.equals(player2)) {
-			return false;
-		} else {
-			return true;
-		}
+		return !player1.equals(player2);
 	}
 	
 	
@@ -78,11 +72,7 @@ public class Result {
 	 * @return boolean (true if player participated in the match)
 	 */
 	public boolean participated(Player player) {
-		if ( winner.equals(player) || loser.equals(player) ) {
-			return true;
-		} else {
-			return false;
-		}
+		return (winner.equals(player) || loser.equals(player)); 
 	}
 	
 	
@@ -94,21 +84,10 @@ public class Result {
 	 * @throws IllegalArgumentException
 	 */
 	public double getScore(Player player) throws IllegalArgumentException {
-		double score;
-		
-		if ( winner.equals(player) ) {
-			score = POINTS_FOR_WIN;
-		} else if ( loser.equals(player) ) {
-			score = POINTS_FOR_LOSS;			
-		} else {
-			throw new IllegalArgumentException("Player " + player.getid() + " did not participate in match");
-		}
-		
-		if ( isDraw ) {
-			score = POINTS_FOR_DRAW;
-		}
-		
-		return score;
+		if ( winner.equals(player) ) return POINTS_FOR_WIN;
+		if ( loser.equals(player) ) return POINTS_FOR_LOSS;
+		if ( isDraw ) return POINTS_FOR_DRAW;
+		throw new IllegalArgumentException("Player " + player.getid() + " did not participate in match");
 	}
 	
 	
@@ -119,17 +98,9 @@ public class Result {
 	 * @return opponent
 	 */
 	public Player getOpponent(Player player) {
-		Player opponent;
-		
-		if ( winner.equals(player) ) {
-			opponent = loser;
-		} else if ( loser.equals(player) ) {
-			opponent = winner;			
-		} else {
-			throw new IllegalArgumentException("Player " + player.getid() + " did not participate in match");
-		}
-		
-		return opponent;
+		if ( winner.equals(player) ) return loser;
+		if ( loser.equals(player) ) return winner;			
+		throw new IllegalArgumentException("Player " + player.getid() + " did not participate in match");
 	}
 	
 	

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * This class holds the results accumulated over a rating period.
@@ -45,7 +46,6 @@ public class RatingPeriodResults {
 	 */
 	public void addResult(Player winner, Player loser) {
 		Result result = new Result(winner, loser);
-		
 		results.add(result);
 	}
 	
@@ -58,7 +58,6 @@ public class RatingPeriodResults {
 	 */
 	public void addDraw(Player player1, Player player2) {
 		Result result = new Result(player1, player2, true);
-		
 		results.add(result);
 	}
 	
@@ -69,32 +68,10 @@ public class RatingPeriodResults {
 	 * @param player
 	 * @return List of results
 	 */
-	public List<Result> getResults(Player player) {
-		List<Result> filteredResults = new ArrayList<Result>();
-		
-		for ( Result result : results ) {
-			if ( result.participated(player) ) {
-				filteredResults.add(result);
-			}
-		}
-		
-		return filteredResults;
-	}
-
-	
-	/**
-	 * Get all the participants whose results are being tracked.
-	 * 
-	 * @return set of all participants covered by the results List.
-	 */
-	public Set<Player> getParticipants() {
-		// Run through the results and make sure all players have been pushed into the participants set.
-		for ( Result result : results ) {
-			participants.add(result.getWinner());
-			participants.add(result.getLoser());
-		}
-
-		return participants;
+	public List<Result> getPlayerResults(Player player) {	
+		return results.stream()
+				.filter(result -> result.participated(player))
+				.collect(Collectors.toList());
 	}
 	
 	
@@ -103,6 +80,8 @@ public class RatingPeriodResults {
 	 * still be calculated even if they don't actually compete.
 	 *
 	 * @param rating
+	 * 
+	 * TODO: I'm not sure I understand the need for this -DB Jan 2021
 	 */
 	public void addParticipants(Player rating) {
 		participants.add(rating);
@@ -115,4 +94,31 @@ public class RatingPeriodResults {
 	public void clear() {
 		results.clear();
 	}
+
+
+	/**
+	 * Gets the results.
+	 *
+	 * @return the results
+	 */
+	public synchronized List<Result> getResults() {
+		return results;
+	}
+	
+	
+	/**
+	 * Get all the participants whose results are being tracked.
+	 * 
+	 * @return set of all participants covered by the results List.
+	 */
+	public Set<Player> getParticipants() { //TODO: not sure the validation needs to happend here
+		// Run through the results and make sure all players have been pushed into the participants set.
+		for ( Result result : results ) {
+			participants.add(result.getWinner());
+			participants.add(result.getLoser());
+		}
+
+		return participants;
+	}
+	
 }

@@ -49,9 +49,7 @@ public class RatingEngine{
 	 * @param initVolatility  Initial volatility for new ratings
 	 * @param tau             How volatility changes over time
 	 */
-	public RatingEngine(
-			double initVolatility,
-			double tau) {
+	public RatingEngine( double initVolatility, double tau) {
 		
 		this.volatility = initVolatility;
 		this.tau = tau;
@@ -68,8 +66,8 @@ public class RatingEngine{
 	 */
 	public void updateRatings(RatingPeriodResults results) {
 		for ( Player player : results.getParticipants() ) {
-			if ( results.getResults(player).size() > 0 ) {
-				calculateNewRating(player, results.getResults(player));
+			if ( results.getPlayerResults(player).size() > 0 ) {
+				calculateNewRating(player, results.getPlayerResults(player));
 			} else {
 				// if a player does not compete during the rating period, then only Step 6 applies.
 				// the player's rating and volatility parameters remain the same but deviation increases
@@ -306,19 +304,10 @@ public class RatingEngine{
 	}
 
 	
-	public double getDefaultRating() {
-		return DEFAULT_RATING;
-	}
-
-	
 	public double getVolatility() {
 		return volatility;
 	}
 
-	
-	public double getDefaultRatingDeviation() {
-		return DEFAULT_DEVIATION;
-	}
 }
 
 

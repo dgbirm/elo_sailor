@@ -6,6 +6,8 @@
  * 
  * -----
  * 
- * THis implementation is 
+ * This implementation is adapted from the implementation by Jeremy Gooch,
+ * which can be found at https://github.com/goochjs/glicko2. See LISCENSE.txt
+ * for details about his distribution.
  */
 package com.ussailing.rankings.model.glicko2;

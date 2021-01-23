@@ -1,4 +1,4 @@
-package com.ussailing.rankings.util;
+package com.ussailing.rankings.persistance.util;
 
 import java.util.stream.Stream;
 
